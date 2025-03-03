@@ -14,25 +14,19 @@ setup_kwargs = {
     "license": "GNU Public License v3.0",
     "long_description": " ".join(__doc__.strip().splitlines()),
     "classifiers": [
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: End Users/Desktop',
-        'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Natural Language :: English',
-        'Operating System :: POSIX',
-        'Operating System :: Microsoft :: Windows',
-        'Programming Language :: Python',
-        'Topic :: Internet :: WWW/HTTP',
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: End Users/Desktop",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Natural Language :: English",
+        "Operating System :: POSIX",
+        "Operating System :: Microsoft :: Windows",
+        "Programming Language :: Python",
+        "Topic :: Internet :: WWW/HTTP",
     ],
     "entry_points": {
-        'console_scripts': [
-            'youtube-upload = youtube_upload.main:run'
-        ],
+        "console_scripts": ["youtube-upload = youtube_upload.main:run"],
     },
-    "install_requires":[
-        'google-api-python-client',
-        'oauth2client',
-        'progressbar2'
-    ]
+    "install_requires": ["google-api-python-client", "oauth2client", "progressbar2"],
 }
 
 setup(**setup_kwargs)
