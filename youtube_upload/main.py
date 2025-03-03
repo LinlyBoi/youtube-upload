@@ -23,9 +23,6 @@ import webbrowser
 from io import open
 
 import googleapiclient.errors
-import oauth2client
-
-from oauth2client import file
 
 from . import auth
 from . import upload_video
@@ -61,7 +58,6 @@ EXIT_CODES = {
     InvalidCategory: 3,
     RequestError: 3,
     AuthenticationError: 4,
-    oauth2client.client.FlowExchangeError: 4,
     NotImplementedError: 5,
 }
 
@@ -191,12 +187,7 @@ def get_youtube_handler(options):
     credentials = options.credentials_file or default_credentials
     debug("Using client secrets: {0}".format(client_secrets))
     debug("Using credentials file: {0}".format(credentials))
-    get_code_callback = (
-        auth.browser.get_code if options.auth_browser else auth.console.get_code
-    )
-    return auth.get_resource(
-        client_secrets, credentials, get_code_callback=get_code_callback
-    )
+    return auth.get_resource(client_secrets, credentials)
 
 
 def parse_options_error(parser, options):
