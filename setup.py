@@ -26,7 +26,13 @@ setup_kwargs = {
     "entry_points": {
         "console_scripts": ["youtube-upload = youtube_upload.main:run"],
     },
-    "install_requires": ["google-api-python-client", "oauth2client", "progressbar2"],
+    "install_requires": [
+        "google-api-python-client",
+        "google-auth",
+        "google-auth-oauthlib",
+        "google-auth-httplib2",
+        "progressbar2",
+    ],
 }
 
 setup(**setup_kwargs)
