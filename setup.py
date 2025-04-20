@@ -24,7 +24,7 @@ setup_kwargs = {
         "Topic :: Internet :: WWW/HTTP",
     ],
     "entry_points": {
-        "console_scripts": ["youtube-upload = youtube_upload.main:run"],
+        "console_scripts": ["youtube-upload = youtube_upload.main:main"],
     },
     "install_requires": [
         "google-api-python-client",
